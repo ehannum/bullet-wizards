@@ -25,8 +25,14 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+}
+
+#deviceready {
+  text-align: center;
+  background-color: #F00;
+  color: #FFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

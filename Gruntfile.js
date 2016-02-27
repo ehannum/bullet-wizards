@@ -25,7 +25,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'Bullet Wizards Companion/www/css/index.css': ['res/phonegap.scss', 'res/styles.scss']
+          'Bullet Wizards Companion/www/css/index.css': 'res/phonegap.scss',
+          'Bullet Wizards Companion/www/css/styles.css': 'res/styles.scss'
         }
       }
     }
