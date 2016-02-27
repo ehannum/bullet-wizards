@@ -29,12 +29,24 @@ module.exports = function(grunt) {
           'Bullet Wizards Companion/www/css/styles.css': 'res/styles.scss'
         }
       }
+    },
+
+    watch: {
+      css: {
+        files: 'res/*.scss',
+        tasks: ['sass']
+      },
+      js: {
+        files: 'res/*.js',
+        tasks: ['concat', 'uglify']
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['concat', 'uglify', 'sass']);
   grunt.registerTask('dev', ['concat', 'sass']);
