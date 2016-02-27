@@ -5,16 +5,17 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'src/wizards.js'
+          'src/wizards.js',
+          'src/phonegap.js'
         ],
-        dest: 'public/src/build.js'
+        dest: 'Bullet Wizards Companion/www/js/index.js'
       }
     },
 
     uglify: {
       build: {
-        src: 'public/src/build.js',
-        dest: 'public/src/build.js'
+        src: 'Bullet Wizards Companion/www/js/index.js',
+        dest: 'Bullet Wizards Companion/www/js/index.js'
       }
     },
 
@@ -24,7 +25,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'public/res/styles.css': 'res/styles.scss'
+          'Bullet Wizards Companion/www/css/index.css': ['res/phonegap.scss', 'res/styles.scss']
         }
       }
     }
