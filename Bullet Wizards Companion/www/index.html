@@ -16,26 +16,35 @@
       <p class="event listening">CONNECTING...</p>
     </div>
 
-    <div class="container safe">
-      <div class="cube spider">
-        <p>1</p>
+    <button id="prev">prev</button>
+    <button id="next">next</button>
+
+    <div id="book">
+      <div class="container">
+        <h1 class="title">BULLET WIZARDS</h1>
       </div>
-      <div class="cube meteor">
-        <p>2</p>
+      <div class="container safe">
+        <div class="cube spider" data-char="1" id="spider">
+          <p>1</p>
+        </div>
+        <div class="cube meteor" data-char="2" id="meteor">
+          <p>2</p>
+        </div>
+        <div class="cube arx" data-char="3" id="arx">
+          <p>3</p>
+        </div>
+        <div class="cube summon" data-char="4" id="summon">
+          <p>4</p>
+        </div>
+        <div class="cube weapon" data-char="5" id="weapon">
+          <p>5</p>
+        </div>
+        <div class="cube artifact" data-char="6" id="artifact">
+          <p>6</p>
+        </div>
+        <button class="cancel">CANCEL</button>
       </div>
-      <div class="cube arx">
-        <p>3</p>
-      </div>
-      <div class="cube summon">
-        <p>4</p>
-      </div>
-      <div class="cube weapon">
-        <p>5</p>
-      </div>
-      <div class="cube artifact">
-        <p>6</p>
-      </div>
-      <button class="cancel">CANCEL</button>
+      <div class="container"></div>
     </div>
 
     <script type="text/javascript" src="cordova.js"></script>
