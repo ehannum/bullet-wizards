@@ -75,8 +75,7 @@ document.getElementById('play').addEventListener('click', function () {
   if (players.length < 2) return;
   gotoPage(1);
   selectPlayers();
-  touhou.currentTime = Math.floor(Math.random()*450+1);
-  touhou.play();
+  countdown();
 
   buzzer.pause();
   buzzer.currentTime = 0;
@@ -103,6 +102,24 @@ document.getElementById('safe').addEventListener('click', function (e) {
     }
   }
 });
+
+binder.bind('cdown', 0);
+
+var countdown = function () {
+  document.getElementById('countdown').setAttribute('style', 'display:block');
+
+  (function tick (n) {
+    if (n === 0) {
+      document.getElementById('countdown').removeAttribute('style');
+      touhou.currentTime = Math.floor(Math.random()*450+1);
+      touhou.play();
+    } else {
+      // todo: play some timer sound
+      binder.set('cdown', n);
+      setTimeout(function(){tick(n-1)}, 1000);
+    }
+  })(3);
+};
 
 var tokenGrab = function (element) {
   var char = parseInt(element.dataset.char);
