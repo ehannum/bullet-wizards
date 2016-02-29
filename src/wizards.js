@@ -72,6 +72,7 @@ document.getElementById('select').addEventListener('click', function (e) {
 });
 
 document.getElementById('play').addEventListener('click', function () {
+  if (players.length < 2) return;
   gotoPage(1);
   selectPlayers();
   touhou.currentTime = Math.floor(Math.random()*450+1);
@@ -85,7 +86,7 @@ document.getElementById('play').addEventListener('click', function () {
 
 document.getElementById('cancel').addEventListener('click', function () {
   touhou.pause();
-  gotoPage(0);
+  resetRound();
 });
 
 document.getElementById('safe').addEventListener('click', function (e) {
@@ -94,20 +95,46 @@ document.getElementById('safe').addEventListener('click', function (e) {
   }
 
   if (grabbed.length === players.length-1) {
-    var hit = 0;
-
     for (var i = 0; i < players.length; i++) {
-      players[i]
+      if (grabbed.indexOf(players[i]) === -1) {
+        damagePlayer(players[i]);
+        break;
+      }
     }
-
-    damagePlayer()
   }
 });
 
-var damagePlayer = function () {
+var tokenGrab = function (element) {
+  var char = parseInt(element.dataset.char);
 
+  if (grabbed.indexOf(char) === -1) {
+    element.innerHTML = '<img class="selected" src="img/haste.png" />';
+    grabbed.push(char);
+  }
 };
 
-var resetGame = function () {
+var damagePlayer = function (player) {
+  var icons = document.getElementsByClassName('safe');
 
+  touhou.pause();
+  buzzer.play();
+
+  for (var i = 0; i < icons.length; i++) {
+    if (icons[i].dataset.char == player) {
+      icons[i].innerHTML = '<img class="selected" src="img/hit.gif" />';
+    }
+  }
+
+  setTimeout(resetRound, 1500);
+};
+
+var resetRound = function () {
+  var icons = document.getElementsByClassName('safe');
+
+  for (var i = 0; i < icons.length; i++) {
+    icons[i].innerHTML = '';
+  }
+
+  grabbed = [];
+  gotoPage(0);
 };
