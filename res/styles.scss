@@ -128,4 +128,21 @@ a, a:link, a:active, a:hover, a:visited {
       background-color: #3FF;
     }
   }
+
+  .big-button {
+    border: 6px solid #000;
+    border-radius: 15px;
+    background-color: #F06;
+    color: #000;
+    align-self: center;
+
+    font-size: 48px;
+    font-weight: 800;
+    padding: 5px 30px;
+
+    &:focus, &:active {
+      outline: none;
+      background-color: #3FF;
+    }
+  }
 }

@@ -32,6 +32,10 @@ var gotoPage = function (n) {
 // CHARACTER SELECTION SCREEN
 
 var players = [];
+var grabbed = [];
+
+var buzzer = new Audio('sounds/buzzer-long.mp3');
+var touhou = new Audio('sounds/2hu.mp3');
 
 var selectPlayers = function () {
   var buttons = document.getElementsByClassName('safe');
@@ -70,4 +74,40 @@ document.getElementById('select').addEventListener('click', function (e) {
 document.getElementById('play').addEventListener('click', function () {
   gotoPage(1);
   selectPlayers();
+  touhou.currentTime = Math.floor(Math.random()*450+1);
+  touhou.play();
+
+  buzzer.pause();
+  buzzer.currentTime = 0;
 });
+
+// GRAB TOKEN SCREEN
+
+document.getElementById('cancel').addEventListener('click', function () {
+  touhou.pause();
+  gotoPage(0);
+});
+
+document.getElementById('safe').addEventListener('click', function (e) {
+  if(e.target && e.target.dataset.char) {
+    tokenGrab(e.target);
+  }
+
+  if (grabbed.length === players.length-1) {
+    var hit = 0;
+
+    for (var i = 0; i < players.length; i++) {
+      players[i]
+    }
+
+    damagePlayer()
+  }
+});
+
+var damagePlayer = function () {
+
+};
+
+var resetGame = function () {
+
+};
