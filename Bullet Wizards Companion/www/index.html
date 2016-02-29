@@ -20,29 +20,37 @@
     <button id="next">next</button>
 
     <div id="book">
-      <div class="container">
+      <div class="container" id="select">
         <img class="title" src="img/b-wiz-logo-white.png" />
+        <div class="cube small spider" data-char="1"></div>
+        <div class="cube small meteor" data-char="2"></div>
+        <div class="cube small arx" data-char="3"></div>
+        <div class="cube small summon" data-char="4"></div>
+        <div class="cube small weapon" data-char="5"></div>
+        <div class="cube small artifact" data-char="6"></div>
+        <h1 class="title"><span id="numPlayers">0</span> PLAYERS</h1>
+        <button id="play" class="bottom-button">PLAY</button>
       </div>
-      <div class="container safe">
-        <div class="cube spider" data-char="1" id="spider">
+      <div class="container">
+        <div class="cube safe spider" data-char="1" id="spider">
           <p></p>
         </div>
-        <div class="cube meteor" data-char="2" id="meteor">
+        <div class="cube safe meteor" data-char="2" id="meteor">
           <p></p>
         </div>
-        <div class="cube arx" data-char="3" id="arx">
+        <div class="cube safe arx" data-char="3" id="arx">
           <p></p>
         </div>
-        <div class="cube summon" data-char="4" id="summon">
+        <div class="cube safe summon" data-char="4" id="summon">
           <p></p>
         </div>
-        <div class="cube weapon" data-char="5" id="weapon">
+        <div class="cube safe weapon" data-char="5" id="weapon">
           <p></p>
         </div>
-        <div class="cube artifact" data-char="6" id="artifact">
+        <div class="cube safe artifact" data-char="6" id="artifact">
           <p></p>
         </div>
-        <button id="cancel">CANCEL</button>
+        <button id="cancel" class="bottom-button">CANCEL</button>
       </div>
       <div class="container">
       </div>
