@@ -13,6 +13,7 @@ var binder = {
 };
 
 var page = 0;
+var paused = false;
 
 document.getElementById('prev').addEventListener('click', function () {
   if (page === 0) return;
@@ -37,6 +38,10 @@ var grabbed = [];
 var buzzer = new Audio('sounds/buzzer-long.mp3');
 var touhou = new Audio('sounds/2hu.mp3');
 var bloop = new Audio('sounds/bloop.mp3');
+
+buzzer.load();
+touhou.load();
+bloop.load();
 
 var selectPlayers = function () {
   var buttons = document.getElementsByClassName('safe');
@@ -85,6 +90,8 @@ document.getElementById('play').addEventListener('click', function () {
 // GRAB TOKEN SCREEN
 
 document.getElementById('cancel').addEventListener('click', function () {
+  if (paused) return;
+
   touhou.pause();
   resetRound();
 });
@@ -123,6 +130,8 @@ var countdown = function () {
 };
 
 var tokenGrab = function (element) {
+  if (paused) return;
+
   var char = parseInt(element.dataset.char);
 
   if (grabbed.indexOf(char) === -1) {
@@ -136,6 +145,8 @@ var damagePlayer = function (player) {
 
   touhou.pause();
   buzzer.play();
+
+  paused = true;
 
   for (var i = 0; i < icons.length; i++) {
     if (icons[i].dataset.char == player) {
@@ -154,5 +165,6 @@ var resetRound = function () {
   }
 
   grabbed = [];
+  paused = false;
   gotoPage(0);
 };
