@@ -137,6 +137,9 @@ var tokenGrab = function (element) {
   if (grabbed.indexOf(char) === -1) {
     element.innerHTML = '<img class="selected" src="img/haste.png" />';
     grabbed.push(char);
+  } else {
+    grabbed.splice(grabbed.indexOf(char), 1);
+    element.innerHTML = '';
   }
 };
 
