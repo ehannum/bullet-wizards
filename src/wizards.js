@@ -36,6 +36,7 @@ var grabbed = [];
 
 var buzzer = new Audio('sounds/buzzer-long.mp3');
 var touhou = new Audio('sounds/2hu.mp3');
+var bloop = new Audio('sounds/bloop.mp3');
 
 var selectPlayers = function () {
   var buttons = document.getElementsByClassName('safe');
@@ -55,7 +56,7 @@ var togglePlayer = function (element) {
   var char = parseInt(element.dataset.char);
 
   if (players.indexOf(char) === -1) {
-    element.innerHTML = '<img class="selected" src="img/flower-outline-pink.png" />';
+    element.innerHTML = '<img class="selected" src="img/selected.png" />';
     players.push(char);
   } else {
     element.innerHTML = '';
@@ -114,7 +115,7 @@ var countdown = function () {
       touhou.currentTime = Math.floor(Math.random()*450+1);
       touhou.play();
     } else {
-      // todo: play some timer sound
+      bloop.play();
       binder.set('cdown', n);
       setTimeout(function(){tick(n-1)}, 1000);
     }
