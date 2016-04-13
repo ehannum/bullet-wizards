@@ -96,7 +96,7 @@ document.getElementById('cancel').addEventListener('click', function () {
   resetRound();
 });
 
-document.getElementById('safe').addEventListener('click', function (e) {
+document.getElementById('safe').addEventListener('touchstart', function (e) {
   if(e.target && e.target.dataset.char) {
     tokenGrab(e.target);
   }
