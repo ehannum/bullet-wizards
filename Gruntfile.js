@@ -8,14 +8,14 @@ module.exports = function(grunt) {
           'src/wizards.js',
           'src/phonegap.js'
         ],
-        dest: 'Bullet Wizards Companion/www/js/index.js'
+        dest: 'www/js/index.js'
       }
     },
 
     uglify: {
       build: {
-        src: 'Bullet Wizards Companion/www/js/index.js',
-        dest: 'Bullet Wizards Companion/www/js/index.js'
+        src: 'www/js/index.js',
+        dest: 'www/js/index.js'
       }
     },
 
@@ -25,8 +25,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'Bullet Wizards Companion/www/css/index.css': 'res/phonegap.scss',
-          'Bullet Wizards Companion/www/css/styles.css': 'res/styles.scss'
+          'www/css/index.css': 'res/phonegap.scss',
+          'www/css/styles.css': 'res/styles.scss'
         }
       }
     },
