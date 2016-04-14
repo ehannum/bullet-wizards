@@ -15,15 +15,15 @@ var binder = {
 var page = 0;
 var paused = false;
 
-document.getElementById('prev').addEventListener('click', function () {
-  if (page === 0) return;
-  gotoPage(page - 1);
-});
+// document.getElementById('prev').addEventListener('click', function () {
+//   if (page === 0) return;
+//   gotoPage(page - 1);
+// });
 
-document.getElementById('next').addEventListener('click', function () {
-  if (page === 2) return;
-  gotoPage(page + 1);
-});
+// document.getElementById('next').addEventListener('click', function () {
+//   if (page === 2) return;
+//   gotoPage(page + 1);
+// });
 
 var gotoPage = function (n) {
   page = n;
